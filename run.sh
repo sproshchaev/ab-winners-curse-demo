@@ -15,7 +15,7 @@ trap 'rm -rf "$tmp"' EXIT
   .venv/bin/python simulate.py
   echo
   echo "ПРИМЕР retrodesign.py"
-  python3 retrodesign.py --users 120000 --base 0.05 --lift 0.02 --observed 0.06 --tau 0.01
+  python3 retrodesign.py --users 50000 --base 0.05 --lift 0.02 --observed 0.06 --tau 0.01
 } > "$tmp/actual.txt"
 
 if diff -u expected.txt "$tmp/actual.txt"; then
