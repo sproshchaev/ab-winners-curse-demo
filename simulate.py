@@ -105,7 +105,7 @@ def program(rng, tau, users, heavy_tails=False):
 
 
 def tau_from_history(estimate, se):
-    """Разброс настоящих эффектов по наблюдаемым оценкам: дисперсия минус шум измерения."""
+    """Разброс настоящих эффектов по прошлым оценкам без отбора."""
     return math.sqrt(max(estimate.var() - se ** 2, 0))
 
 
@@ -146,7 +146,7 @@ def table_fixes(rng):
          won_again.mean())
 
     line("снижение_разброс_известен", shrink_factor(tau, se) * estimate_won.mean(), real)
-    # На практике разброс неизвестен: он оценивается по прошлым тестам
+    # На практике разброс неизвестен и оценивается по прошлым тестам, здесь их заменяет эта же выборка
     line("снижение_разброс_по_истории",
          shrink_factor(tau_from_history(estimate, se), se) * estimate_won.mean(), real)
 

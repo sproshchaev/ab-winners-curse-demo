@@ -44,7 +44,7 @@ def exaggeration(users, base, lift):
 
 
 def minimal_significant_lift(users, base):
-    """Меньше этого значимого роста тест показать не может, каким бы ни был настоящий."""
+    """Расчётный порог значимого роста при этой выборке."""
     return ALPHA_Z * se_relative(users, base)
 
 
