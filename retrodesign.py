@@ -28,7 +28,7 @@ def se_absolute(base, lift, users):
 def users_for_power(power, base, lift):
     """Пользователей на группу для заданной мощности по положительному результату."""
     z_total = ALPHA_Z + NORMAL.inv_cdf(power)
-    return round(variance_of_difference(base, lift) * (z_total / (base * lift)) ** 2)
+    return math.ceil(variance_of_difference(base, lift) * (z_total / (base * lift)) ** 2)
 
 
 def power(users, base, lift):

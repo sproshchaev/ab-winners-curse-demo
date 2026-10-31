@@ -64,7 +64,7 @@ def table_required_users():
 
 
 def table_peeking(rng):
-    users_per_day = users_for_power(0.80, BASE, TRUE_LIFT) // DAYS
+    users_per_day = math.ceil(users_for_power(0.80, BASE, TRUE_LIFT) / DAYS)
     print(f"\nТАБЛИЦА 3. Взгляд каждый день и остановка на первой значимости. "
           f"{users_per_day} на группу в день, {DAYS} дней, мощность к концу 80%")
     print("сценарий | победа_% | значимо_в_любую_сторону_% | рост_победителя_% | завышение "
